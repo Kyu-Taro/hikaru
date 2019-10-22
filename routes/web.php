@@ -24,3 +24,6 @@ Route::get('/','MainController@index')->name('index');
 Route::post('/','MainController@post')->name('post');
 
 Route::post('/admin','MainController@admin')->name('admin');
+
+Route::resource('/board','BoardController');
+Route::resource('/return','ReturnController');
