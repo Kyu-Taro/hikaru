@@ -9,6 +9,6 @@ class Retu extends Model
     protected $table = 'returns';
 
     protected $fillable = [
-        'board_id','text'
+        'board_id','text','flg'
     ];
 }
