@@ -41,16 +41,18 @@
                     {{ date('Y年m月d日 H時i分',strtotime($item->created_at)) }}<br/>
                 </div>
             @foreach ($return as $retu)
-                @if ($retu->flg === 1)
-                    <div class="orner">
-                        {{ $retu->text }}<br/>
-                        {{ date('Y年m月d日 H時i分',strtotime($retu->created_at)) }}<br/>
-                    </div>
-                @else
-                    <div class="post">
-                        {{ $retu->text }}<br/>
-                        {{ date('Y年m月d日 H時i分',strtotime($retu->created_at)) }}<br/>
-                    </div>
+                @if ($retu->board_id === $item->id)
+                    @if ($retu->flg === 1)
+                        <div class="orner">
+                            {{ $retu->text }}<br/>
+                            {{ date('Y年m月d日 H時i分',strtotime($retu->created_at)) }}<br/>
+                        </div>
+                    @else
+                        <div class="post">
+                            {{ $retu->text }}<br/>
+                            {{ date('Y年m月d日 H時i分',strtotime($retu->created_at)) }}<br/>
+                        </div>
+                    @endif
                 @endif
             @endforeach
         </div>
